@@ -2,12 +2,14 @@ interface CounterComponentProps {
   count: number;
   onIncrement: () => void;
   onDecrement: () => void;
+  onReset: () => void;
 }
 
 const CounterComponent = ({
   count,
   onIncrement,
   onDecrement,
+  onReset,
 }: CounterComponentProps) => {
   return (
     <div>
@@ -26,6 +28,12 @@ const CounterComponent = ({
           -
         </button>
       </div>
+      <button
+        onClick={onReset}
+        className="mt-4 bg-gray-500 text-white px-4 py-2 rounded"
+      >
+        Reset
+      </button>
     </div>
   );
 };

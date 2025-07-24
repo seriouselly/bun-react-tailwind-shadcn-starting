@@ -30,6 +30,7 @@ export function App() {
           count={count}
           onIncrement={increment}
           onDecrement={decrement}
+          onReset={reset}
         />
       </div>
     </div>
