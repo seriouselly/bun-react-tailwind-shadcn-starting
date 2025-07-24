@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+interface CounterComponentProps {
+  count: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+}
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  const onIncrement = () => setCount(count + 1);
-  const onDecrement = () => setCount(count - 1);
-
+const CounterComponent = ({
+  count,
+  onIncrement,
+  onDecrement,
+}: CounterComponentProps) => {
   return (
     <div>
-      <div className="text-center">
-        <h1>Count: {count}</h1>
-      </div>
+      <h1>Count: {count}</h1>
       <div className="flex gap-4 justify-center mt-4">
         <button
           onClick={onIncrement}
@@ -28,3 +29,5 @@ export const Counter = () => {
     </div>
   );
 };
+
+export default CounterComponent;
