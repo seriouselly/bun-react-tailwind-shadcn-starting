@@ -1,3 +1,36 @@
+# Tugas React - Bootcamp RevoU
+
+## 🧱 Tech Stack
+
+- Bun
+- React
+- TypeScript
+- TailwindCSS
+
+## 🚀 Fitur
+
+- Komponen Counter (increment, decrement, reset)
+- State menggunakan useState
+- Props untuk mengirim state & handler
+- Lifting state up ke App.tsx
+
+## 🧪 Screenshots
+
+![Counter Screenshot](./docs/images/bun-react.png)
+
+## 🛠️ Cara Menjalankan
+
+````bash
+bun install
+bun dev
+
+
+✅ Commit lagi:
+```bash
+git add .
+git commit -m "docs: add README documentation with screenshot"
+````
+
 # Bun - React - Tailwind - Shadcn | Starting Template
 
 To install dependencies:
@@ -34,8 +67,8 @@ This project was created using `bun init` in bun v1.2.19. [Bun](https://bun.sh) 
 └── 📁src   // Main source directory
     └── 📁components    // Reusable UI components
         └── 📁shared    // Shared components
-        └── 📁ui    // Shadcn UI components 
-            ├── button.tsx  
+        └── 📁ui    // Shadcn UI components
+            ├── button.tsx
             ├── card.tsx
             ├── form.tsx
             ├── input.tsx
