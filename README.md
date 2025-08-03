@@ -1,105 +1,65 @@
-# Tugas React - Bootcamp RevoU
+# 🚀 Membuat Registration Form
 
-## 🧱 Tech Stack
+Komponen ini merupakan form pendaftaran peserta bootcamp yang dibangun menggunakan:
 
-- Bun
-- React
-- TypeScript
-- TailwindCSS
-
-## 🚀 Fitur
-
-- Komponen Counter (increment, decrement, reset)
-- State menggunakan useState
-- Props untuk mengirim state & handler
-- Lifting state up ke App.tsx
-
-## 🧪 Screenshots
-
-![Counter Screenshot](./docs/images/bun-react.png)
-
-## 🛠️ Cara Menjalankan
-
-````bash
-bun install
-bun dev
-
-
-✅ Commit lagi:
-```bash
-git add .
-git commit -m "docs: add README documentation with screenshot"
-````
-
-# Bun - React - Tailwind - Shadcn | Starting Template
-
-To install dependencies:
-
-```bash
-bun install
-```
-
-To start a development server:
-
-```bash
-bun dev
-```
-
-To build the project:
-
-```bash
-bun run build
-```
-
-To run for production:
-
-```bash
-bun start
-```
-
-This project was created using `bun init` in bun v1.2.19. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+- ⚛️ React + TypeScript
+- 🧠 @tanstack/react-form (pengelolaan state form)
+- 💄 Shadcn UI (komponen siap pakai)
+- 🎨 TailwindCSS (styling responsif)
+- 🔔 Sonner (toast notifikasi)
 
 ---
 
-## Project Structure
+## 🧩 Fitur
 
-```ts
-└── 📁src   // Main source directory
-    └── 📁components    // Reusable UI components
-        └── 📁shared    // Shared components
-        └── 📁ui    // Shadcn UI components
-            ├── button.tsx
-            ├── card.tsx
-            ├── form.tsx
-            ├── input.tsx
-            ├── label.tsx
-            ├── select.tsx
-    └── 📁hooks   // Custom hooks
-    └── 📁lib   // Library functions
-        ├── utils.ts    // Utility functions
-    └── 📁pages   // Page components
-    └── 📁public    // Public assets
-        └── 📁images    // Image assets
-            ├── logo.svg
-            ├── react.svg
-        └── 📁styles    // CSS Styles directory
-            ├── globals.css
-        ├── index.html    // Main HTML file
-    └── 📁routes    // Application routes
-    └── 📁stores    // Global state management (Zustand)
-    └── 📁types   // TypeScript type definitions
-    ├── APITester.tsx   // API testing component
-    ├── App.tsx   // Main application component
-    ├── index.ts    // Entry point for the application
-    ├── main.tsx    // Main entry file for the React application
-├── .env    // Environment variables
-├── .gitignore    // Git ignore file
-├── build.ts    // Build script
-├── bun-env.d.ts    // Type definitions for Bun environment
-├── bun.lock    // Bun lock file
-├── bunfig.toml   // Bun configuration file
-├── components.json   // Shadcn Components configuration
-├── package.json    // Project configuration
-├── README.md   // Project documentation
-└── tsconfig.json   // TypeScript configuration
+### ✅ Form Field
+- Full Name *(text input)*
+- Email *(email input)*
+- Password *(password input)*
+- Age *(number input)*
+- Birthdate *(date input)*
+- Gender *(select dropdown: Male / Female)*
+- Learning Path *(checkbox multiple: Frontend, Backend, DevOps, UI/UX)*
+- Notes *(textarea – muncul hanya jika "Add Notes?" dicentang)*
+
+### ⚙️ Interaktivitas
+- `onFocus` dan `onBlur` untuk logging input interaksi
+- `onSubmit` menampilkan data peserta yang disubmit
+- Conditional rendering untuk bagian "Notes"
+- Data peserta ditampilkan di bawah form setelah disubmit
+- Toast sukses muncul menggunakan `toast()` dari Sonner
+
+### 📱 Responsif
+- Tampilan responsif untuk mobile dan desktop
+- Menggunakan `max-w-xl`, `mx-auto`, `space-y-4`, dan utility Tailwind lainnya
+
+---
+
+## 📸 Screenshot
+
+> Simpan gambar hasil di `docs/images/`  
+> Contoh path gambar: `docs/images/form-preview.png`
+
+![Struktur Folder](./docs/images/structure-folder.png)
+
+---
+
+## 🛠 Cara Menjalankan
+
+1. Jalankan dev server:
+```bash
+bun dev
 ```
+2. Buka di browser
+```arduino
+http://localhost:3000 (ctrl + click)
+```
+<br>
+
+### 📸 Hasil Tampilan Form
+- Tampilan Web
+
+![Web Responsive](./docs/images/responsive-web.png)
+
+- Tampilan Mobile
+![Mobile Responsive](./docs/images/responsive-mobile.png)
