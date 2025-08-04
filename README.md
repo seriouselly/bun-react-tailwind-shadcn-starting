@@ -1,65 +1,79 @@
-# 🚀 Membuat Registration Form
+# 🧩 React ProfileCard - Tugas React Part 2
 
-Komponen ini merupakan form pendaftaran peserta bootcamp yang dibangun menggunakan:
-
-- ⚛️ React + TypeScript
-- 🧠 @tanstack/react-form (pengelolaan state form)
-- 💄 Shadcn UI (komponen siap pakai)
-- 🎨 TailwindCSS (styling responsif)
-- 🔔 Sonner (toast notifikasi)
+Tugas ini merupakan lanjutan dari project React sebelumnya. Komponen `ProfileCard` menampilkan informasi profil pengguna yang berisi foto, nama, deskripsi singkat, dan tombol link ke sosial media (LinkedIn dan GitHub) dengan icon dari `lucide-react`.
 
 ---
 
-## 🧩 Fitur
+## ✨ Fitur Utama
 
-### ✅ Form Field
-- Full Name *(text input)*
-- Email *(email input)*
-- Password *(password input)*
-- Age *(number input)*
-- Birthdate *(date input)*
-- Gender *(select dropdown: Male / Female)*
-- Learning Path *(checkbox multiple: Frontend, Backend, DevOps, UI/UX)*
-- Notes *(textarea – muncul hanya jika "Add Notes?" dicentang)*
-
-### ⚙️ Interaktivitas
-- `onFocus` dan `onBlur` untuk logging input interaksi
-- `onSubmit` menampilkan data peserta yang disubmit
-- Conditional rendering untuk bagian "Notes"
-- Data peserta ditampilkan di bawah form setelah disubmit
-- Toast sukses muncul menggunakan `toast()` dari Sonner
-
-### 📱 Responsif
-- Tampilan responsif untuk mobile dan desktop
-- Menggunakan `max-w-xl`, `mx-auto`, `space-y-4`, dan utility Tailwind lainnya
+✅ Menggunakan **TailwindCSS** untuk styling  
+✅ Menggunakan **Shadcn UI** untuk komponen Card, Avatar, dan Button  
+✅ Menampilkan gambar profil asli  
+✅ Tombol sosial media aktif dan bisa diklik  
+✅ Icon dari lucide-react  
+✅ Struktur project rapi dan modular
 
 ---
 
-## 📸 Screenshot
+## 🗂️ Struktur Folder
 
-> Simpan gambar hasil di `docs/images/`  
-> Contoh path gambar: `docs/images/form-preview.png`
+src/
+├── components/
+│ └── shared/
+│ ├── ProfileCard.tsx
+│ └── index.ts
+├── data/
+│ ├── profile.ts
+│ └── index.ts
+├── interfaces/
+│ ├── profile-card.interface.ts
+│ └── index.ts
+public/
+└── assets/
+└── images/
+└── profile-image.png
 
-![Struktur Folder](./docs/images/structure-folder.png)
 
 ---
 
-## 🛠 Cara Menjalankan
+## 🧱 Teknologi yang Digunakan
 
-1. Jalankan dev server:
+- React + TypeScript
+- TailwindCSS
+- Shadcn UI (Card, Avatar, Button)
+- lucide-react (Icon sosial media)
+- Bun runtime
+
+---
+
+## 💻 Cara Menjalankan Project
+
 ```bash
+bun install
 bun dev
 ```
-2. Buka di browser
-```arduino
-http://localhost:3000 (ctrl + click)
+## 📦 Contoh Penggunaan Komponen
+```tsx
+<ProfileCard
+  name={profileData.name}
+  description={profileData.description}
+  image={profileData.image}
+  socialMedia={profileData.socialMedia}
+/>
 ```
-<br>
+---
+## 🔗 Link Sosial Media
+Tombol sosial media dibuat dinamis berdasarkan data di src/data/profile.ts. Saat diklik, tombol akan membuka link sosial media di tab baru.
 
-### 📸 Hasil Tampilan Form
-- Tampilan Web
+---
+## 🖼️ Tampilan UI
+Screenshot tampilan ProfileCard:
+- Web Version
+![previewProfileCard](./docs/images/web-version.png)
 
-![Web Responsive](./docs/images/responsive-web.png)
+- Mobile Version
+![previewProfileCard](./docs/images/mobile-version.png)
 
-- Tampilan Mobile
-![Mobile Responsive](./docs/images/responsive-mobile.png)
+---
+## 🚀 Kontribusi
+Tugas ini dibuat untuk latihan mandiri dalam memahami konsep-komponen React, prop drilling, penggunaan Shadcn UI, dan pemetaan data dengan map().

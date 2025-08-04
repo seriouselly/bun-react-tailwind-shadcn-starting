@@ -18,7 +18,7 @@ export const ProfileCard = ({
   socialMedia,
 }: ProfileCardProps) => {
   return (
-    <Card className="max-w-[600] mx-auto shadow-lg border p-30 text-center space-y-4">
+    <Card className="max-w-[500] mx-auto shadow-lg border p-30 text-center space-y-4">
       <Avatar className="w-30 h-30 mx-auto">
         <AvatarImage src={image} alt={name} />
         <AvatarFallback>CN</AvatarFallback>
@@ -26,7 +26,7 @@ export const ProfileCard = ({
       <CardContent>
         <h2 className="text-xl font-semibold">{name}</h2>
         <p className="text-gray-600">{description}</p>
-        <div className="flex justify-center gap-4 mt-5 flex-wrap">
+        <div className="flex justify-center gap-5 mt-5 flex-wrap">
           {socialMedia.map((item) => {
             let IconComponent;
 
