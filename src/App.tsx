@@ -2,20 +2,57 @@ import { Card, CardContent } from "@/components/ui/card";
 import { APITester } from "./APITester";
 import "@/public/styles/globals.css";
 
-import { ProfileCard } from "@/components/shared"
-import { profileData } from "@/data"
+import { useEffect, useState, useMemo } from "react";
+import { CharacterCard } from "@/components/CharacterCard";
+import { SearchBar } from "@/components/SearchBar";
+import { useTheme } from "@/components/context/ThemeContext";
+import { Button } from "@/components/ui/button";
+import { Sun, MoonStar} from "lucide-react";
+
+interface Character {
+  id: string;
+  name: string;
+  image: string;
+}
 
 export function App() {
-    return (
-    <main className="flex justify-center items-center h-screen">
-      <ProfileCard
-        name={profileData.name}
-        description={profileData.description}
-        image={profileData.image}
-        socialMedia={profileData.socialMedia}
-      />
-    </main>
-  )
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [search, setSearch] = useState("");
+
+  const filteredCharacters = useMemo(() => {
+    return characters.filter((char) =>
+      char.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search, characters]);
+
+  useEffect(() => {
+    fetch("https://dragonball-api.com/api/characters?limit=12")
+      .then((res) => res.json())
+      .then((data) => setCharacters(data.items));
+  }, []);
+
+  const { toggle, theme } = useTheme();
+
+  return (
+    <>
+      <div className="flex justify-center items-center p-6 gap-5">
+        <SearchBar onSearch={setSearch} />
+      <Button onClick={toggle} className="flex items-center gap-2 w-[40px] h-[40px] cursor-[pointer]">
+          {theme === "light" ? (
+            <MoonStar />
+          ) : (
+            <Sun />
+          )}
+      </Button>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-8 p-6">
+        {filteredCharacters.map((char) => (
+          <CharacterCard key={char.id} character={char} />
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default App;
