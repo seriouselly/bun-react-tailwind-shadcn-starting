@@ -1,79 +1,84 @@
-# 🧩 React ProfileCard - Tugas React Part 2
-
-Tugas ini merupakan lanjutan dari project React sebelumnya. Komponen `ProfileCard` menampilkan informasi profil pengguna yang berisi foto, nama, deskripsi singkat, dan tombol link ke sosial media (LinkedIn dan GitHub) dengan icon dari `lucide-react`.
-
----
-
-## ✨ Fitur Utama
-
-✅ Menggunakan **TailwindCSS** untuk styling  
-✅ Menggunakan **Shadcn UI** untuk komponen Card, Avatar, dan Button  
-✅ Menampilkan gambar profil asli  
-✅ Tombol sosial media aktif dan bisa diklik  
-✅ Icon dari lucide-react  
-✅ Struktur project rapi dan modular
+# 🚀 Tugas React Part 4 – Dragon Ball App
+## 📝 Deskripsi Proyek
+Aplikasi ini dibuat menggunakan React + TypeScript dengan beberapa fitur modern seperti fetch API, pencarian dengan optimisasi, dark mode dengan context, dan global state management menggunakan Zustand.
+Data karakter diambil dari [Dragon Ball API](https://dragonball-api.com/api/characters).
 
 ---
+### ✨ Fitur Utama
+1. Fetch Data Karakter Dragon Ball
+Menggunakan useEffect untuk mengambil data dari API.
 
-## 🗂️ Struktur Folder
+- Menampilkan nama dan gambar setiap karakter.
 
+- Styling menggunakan TailwindCSS + komponen dari Shadcn UI.
+URL API: https://dragonball-api.com/api/characters.
+
+2. Pencarian dengan Optimisasi useMemo
+Input search untuk memfilter karakter berdasarkan nama.
+Menggunakan useMemo agar pencarian lebih efisien dan tidak re-render berlebihan.
+</br>
+
+3. Dark Mode dengan useContext + Shadcn
+Menggunakan ThemeContext untuk menyimpan state tema (light / dark).
+
+- Tombol toggle untuk mengganti tema.
+
+- Mengaplikasikan tema pada background & teks menggunakan TailwindCSS (dark: class).
+
+4. Global State Management dengan Zustand
+State counter dibuat menggunakan Zustand.
+
+- Counter bisa increment, decrement, dan reset.
+
+- State global membuat counter dapat diakses dari berbagai komponen.
+
+### 📂 Struktur Folder
+``` bash
 src/
 ├── components/
-│ └── shared/
-│ ├── ProfileCard.tsx
-│ └── index.ts
-├── data/
-│ ├── profile.ts
-│ └── index.ts
-├── interfaces/
-│ ├── profile-card.interface.ts
-│ └── index.ts
-public/
-└── assets/
-└── images/
-└── profile-image.png
-
-
+│   ├── CharacterCard.tsx       # Komponen untuk menampilkan karakter
+│   ├── SearchBar.tsx           # Komponen input pencarian
+│   └── CounterZustand.tsx      # Counter global dengan Zustand
+├── context/
+│   └── ThemeContext.tsx        # Context untuk Dark/Light mode
+├── store/
+│   └── counterStore.ts         # Store Zustand
+└── App.tsx                     # Entry utama aplikasi
+```
 ---
-
-## 🧱 Teknologi yang Digunakan
-
+### 🛠️ Teknologi yang Digunakan
 - React + TypeScript
+
 - TailwindCSS
-- Shadcn UI (Card, Avatar, Button)
-- lucide-react (Icon sosial media)
-- Bun runtime
+
+- Shadcn UI
+
+- Zustand
+
+- TanStack Query (opsional jika ingin pengelolaan data lebih baik)
+
+- Bun sebagai build tool
 
 ---
-
-## 💻 Cara Menjalankan Project
-
+### 🚀 Cara Menjalankan Project
+1. Clone Repository
 ```bash
 bun install
+```
+2.Jalankan Project
+```bash
 bun dev
 ```
-## 📦 Contoh Penggunaan Komponen
-```tsx
-<ProfileCard
-  name={profileData.name}
-  description={profileData.description}
-  image={profileData.image}
-  socialMedia={profileData.socialMedia}
-/>
-```
----
-## 🔗 Link Sosial Media
-Tombol sosial media dibuat dinamis berdasarkan data di src/data/profile.ts. Saat diklik, tombol akan membuka link sosial media di tab baru.
 
 ---
-## 🖼️ Tampilan UI
-Screenshot tampilan ProfileCard:
-- Web Version
-![previewProfileCard](./docs/images/web-version.png)
+### 📸 Screenshot
+##### Halaman Utama – Light Mode
+![Light Mode](/docs/images/light-mode.png)
 
-- Mobile Version
-![previewProfileCard](./docs/images/mobile-version.png)
+##### Halaman Utama – Dark Mode
+![Dark Mode](/docs/images/dark-mode.png)
 
----
-## 🚀 Kontribusi
-Tugas ini dibuat untuk latihan mandiri dalam memahami konsep-komponen React, prop drilling, penggunaan Shadcn UI, dan pemetaan data dengan map().
+##### Fitur Pencarian
+![Search Fitur](/docs/images/search-fitur.png)
+
+
