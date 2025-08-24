@@ -1,14 +1,31 @@
 // main.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from './App';
-import { ThemeProvider } from './components/context/ThemeContext'; // Import ThemeProvider
+import { ThemeProvider } from './components/context/ThemeContext';
+import { createRouter, RouterProvider } from '@tanstack/react-router';
+import { routeTree } from './routeTree.gen'
+import { Toaster } from 'sonner';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createRouter({ routeTree })
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router
+  }
+}
+
+
+const elem = document.getElementById('root');
+if (!elem) {
+  throw new Error('Failed to find the root element');
+};
+const app = (
   <React.StrictMode>
-    {/* Bungkus komponen App dengan ThemeProvider */}
     <ThemeProvider>
-      <App />
+      <RouterProvider router={router} />
+      <Toaster />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+ReactDOM.createRoot(elem).render(app);

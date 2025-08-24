@@ -3,8 +3,8 @@ import { APITester } from "./APITester";
 import "@/public/styles/globals.css";
 
 import { useEffect, useState, useMemo } from "react";
-import { CharacterCard } from "@/components/CharacterCard";
-import { SearchBar } from "@/components/SearchBar";
+import { CharacterCard } from "@/components/context/CharacterCard";
+import { SearchBar } from "@/components/context/SearchBar";
 import { useTheme } from "@/components/context/ThemeContext";
 import { Button } from "@/components/ui/button";
 import { Sun, MoonStar} from "lucide-react";
@@ -26,7 +26,7 @@ export function App() {
   }, [search, characters]);
 
   useEffect(() => {
-    fetch("https://dragonball-api.com/api/characters?limit=12")
+    fetch("https://dragonball-api.com/api/characters?limit=10")
       .then((res) => res.json())
       .then((data) => setCharacters(data.items));
   }, []);
