@@ -14,19 +14,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function RegistrationForm() {
   const [addNotes, setAddNotes] = useState(false);
-  
-  const [participants, setParticipants] = useState<any[]>(() => {
-    const saved = localStorage.getItem("participants");
-    return saved ? JSON.parse(saved) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem("participants", JSON.stringify(participants));
-  }, [participants]);
+  const [participants, setParticipants] = useState<any[]>([]);
 
   const form = useForm({
     defaultValues: {

@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { cn } from "lib/utils";
 import { useRef, type FormEvent } from "react";
 
 export function APITester() {
@@ -52,7 +58,7 @@ export function APITester() {
           className={cn(
             "flex-1 font-mono",
             "bg-transparent border-0 shadow-none",
-            "focus-visible:ring-0 focus-visible:ring-offset-0",
+            "focus-visible:ring-0 focus-visible:ring-offset-0"
           )}
           placeholder="/api/hello"
         />
@@ -70,7 +76,7 @@ export function APITester() {
           "w-full min-h-[140px] bg-card",
           "border border-input rounded-xl p-3",
           "font-mono resize-y",
-          "placeholder:text-muted-foreground",
+          "placeholder:text-muted-foreground"
         )}
       />
     </div>
