@@ -1,4 +1,4 @@
-import { useCounter } from "./store/counterStore";
+import { useCounter } from "../store/counterStore";
 import { Button } from "@/components/ui/button";
 
 export function CounterZustand() {

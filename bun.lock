@@ -24,11 +24,9 @@
         "react-hook-form": "^7.60.0",
         "sonner": "^2.0.6",
         "tailwind-merge": "^3.3.1",
-        "tailwind-variants": "^2.1.0",
         "tailwindcss": "^4.1.11",
         "tailwindcss-animate": "^1.0.7",
         "zod": "^4.0.5",
-        "zustand": "^5.0.7",
       },
       "devDependencies": {
         "@tanstack/router-cli": "^1.131.27",
@@ -36,8 +34,6 @@
         "@types/bun": "^1.2.19",
         "@types/react": "^19.1.11",
         "@types/react-dom": "^19.1.6",
-        "autoprefixer": "^10.4.21",
-        "postcss": "^8.5.6",
       },
     },
   },
@@ -491,8 +487,6 @@
     "strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
 
     "tailwind-merge": ["tailwind-merge@3.3.1", "", {}, "sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g=="],
-
-    "tailwind-variants": ["tailwind-variants@2.1.0", "", { "peerDependencies": { "tailwind-merge": ">=3.0.0", "tailwindcss": "*" }, "optionalPeers": ["tailwind-merge"] }, "sha512-82m0eRex0z6A3GpvfoTCpHr+wWJmbecfVZfP3mqLoDxeya5tN4mYJQZwa5Aw1hRZTedwpu1D2JizYenoEdyD8w=="],
 
     "tailwindcss": ["tailwindcss@4.1.11", "", {}, "sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA=="],
 
