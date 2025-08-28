@@ -29,7 +29,7 @@ const server = serve({
     },
   },
 
-  development: process.env.NODE_ENV !== "production" && {
+  development: process.env.NODE_ENV != "production" &&{
     // Enable browser hot reloading in development
     hmr: true,
 

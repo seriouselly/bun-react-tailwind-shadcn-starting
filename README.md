@@ -1,84 +1,70 @@
-# 🚀 Tugas React Part 4 – Dragon Ball App
-## 📝 Deskripsi Proyek
-Aplikasi ini dibuat menggunakan React + TypeScript dengan beberapa fitur modern seperti fetch API, pencarian dengan optimisasi, dark mode dengan context, dan global state management menggunakan Zustand.
-Data karakter diambil dari [Dragon Ball API](https://dragonball-api.com/api/characters).
+## 🚀 React Part 6 - Dragon Ball App
+### 📌 Deskripsi
 
----
-### ✨ Fitur Utama
-1. Fetch Data Karakter Dragon Ball
-Menggunakan useEffect untuk mengambil data dari API.
+Project ini dibuat untuk memenuhi Tugas React Part 6.
+Aplikasi ini menampilkan halaman Profile dan Characters Dragon Ball dengan fitur Routing, Fetching Data API, Pagination, Table, Skeleton Loading, Error Handling, dan Optional Search & Filter.
 
-- Menampilkan nama dan gambar setiap karakter.
-
-- Styling menggunakan TailwindCSS + komponen dari Shadcn UI.
-URL API: https://dragonball-api.com/api/characters.
-
-2. Pencarian dengan Optimisasi useMemo
-Input search untuk memfilter karakter berdasarkan nama.
-Menggunakan useMemo agar pencarian lebih efisien dan tidak re-render berlebihan.
-</br>
-
-3. Dark Mode dengan useContext + Shadcn
-Menggunakan ThemeContext untuk menyimpan state tema (light / dark).
-
-- Tombol toggle untuk mengganti tema.
-
-- Mengaplikasikan tema pada background & teks menggunakan TailwindCSS (dark: class).
-
-4. Global State Management dengan Zustand
-State counter dibuat menggunakan Zustand.
-
-- Counter bisa increment, decrement, dan reset.
-
-- State global membuat counter dapat diakses dari berbagai komponen.
-
-### 📂 Struktur Folder
-``` bash
-src/
-├── components/
-│   ├── CharacterCard.tsx       # Komponen untuk menampilkan karakter
-│   ├── SearchBar.tsx           # Komponen input pencarian
-│   └── CounterZustand.tsx      # Counter global dengan Zustand
-├── context/
-│   └── ThemeContext.tsx        # Context untuk Dark/Light mode
-├── store/
-│   └── counterStore.ts         # Store Zustand
-└── App.tsx                     # Entry utama aplikasi
-```
----
 ### 🛠️ Teknologi yang Digunakan
+
 - React + TypeScript
 
-- TailwindCSS
+- Bun
+
+- React Router
+
+- @tanstack/react-query
+
+- @tanstack/react-table
 
 - Shadcn UI
 
-- Zustand
+- TilwindCSS
 
-- TanStack Query (opsional jika ingin pengelolaan data lebih baik)
-
-- Bun sebagai build tool
-
----
-### 🚀 Cara Menjalankan Project
-1. Clone Repository
-```bash
-bun install
+### ⚙️ Setup & Instalasi
+- Install dependencies
+- bun install
+- Tambahkan file .env
+```ini
+BUN_PUBLIC_BASE_URL=https://dragonball-api.com/api
 ```
-2.Jalankan Project
+
+
+### 🔎Jalankan project
 ```bash
 bun dev
 ```
 
----
+### 📖 Fitur Utama
+1. Routing
+
+- ``/profile`` → Menampilkan nama, foto, dan deskripsi singkat.
+
+- ``/characters`` → Menampilkan tabel karakter Dragon Ball.
+
+2. Fetching Data (API Dragon Ball)
+
+- Endpoint:
+```bash
+GET /characters?page=1&limit=10
+```
+- Pagination menggunakan query ``page`` & ``limit``.
+
+3. TanStack Query + Shadcn Pagination
+
+- Data karakter diambil dengan TanStack Query.
+
+- Pagination diimplementasikan dengan komponen Shadcn.
+
+4. TanStack Table + Shadcn
+
+- Tabel menampilkan Name & Image minimal.
+
 ### 📸 Screenshot
-##### Halaman Utama – Light Mode
-![Light Mode](/docs/images/light-mode.png)
+- Profile Page
+![ProfilePage](./docs/images/profile.png)
 
-##### Halaman Utama – Dark Mode
-![Dark Mode](/docs/images/dark-mode.png)
+- Characters Page
+![CharacterPage](./docs/images/character.png)
 
-##### Fitur Pencarian
-![Search Fitur](/docs/images/search-fitur.png)
-
-
+- Search & Filter
+![SearchPage](./docs/images/search.png)
