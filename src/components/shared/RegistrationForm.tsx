@@ -50,8 +50,8 @@ type RegistrationFormData = z.infer<typeof registrationSchema>;
 
 export const RegistrationForm: React.FC = () => {
   const [addNotes, setAddNotes] = useState(false);
-  const [participants, setParticipants] = useState<RegistrationFormData[]>([]);
   const [loading, setLoading] = useState(false);
+  const [participants, setParticipants] = useState<RegistrationFormData[]>([]);
 
   const form = useForm({
     defaultValues: {
@@ -92,7 +92,7 @@ export const RegistrationForm: React.FC = () => {
   });
 
   return (
-    <div className="w-full min-h-100 m-4">
+    <div className="w-full min-h-150 m-4">
       <div className="w-full max-w-sm p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
         <h2 className="text-center text-2xl font-bold mb-4">
           Registration Form

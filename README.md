@@ -1,70 +1,87 @@
-## 🚀 React Part 6 - Dragon Ball App
-### 📌 Deskripsi
+# 🚀 Final Project React - Authentication & Authorization
 
-Project ini dibuat untuk memenuhi Tugas React Part 6.
-Aplikasi ini menampilkan halaman Profile dan Characters Dragon Ball dengan fitur Routing, Fetching Data API, Pagination, Table, Skeleton Loading, Error Handling, dan Optional Search & Filter.
+## 🎯 Tujuan
+Project ini dibuat untuk mengintegrasikan sistem **Authentication** dan **Authorization** dari Backend (NestJS Auth JWT) ke dalam aplikasi Frontend menggunakan React.
 
-### 🛠️ Teknologi yang Digunakan
+---
 
-- React + TypeScript
+## 🧩 Fitur Utama
+✅ **Authentication & Authorization**
+- Login dengan backend menggunakan JWT
+- Auth Guard → redirect ke `/login` jika user belum login
+- State user disimpan dengan **Zustand**
 
-- Bun
+✅ **Routing**
+- Menggunakan **Tanstack Router** (File-based Routing)
+- Protected Route untuk `/dashboard`
 
-- React Router
+✅ **Form**
+- Login form dibuat dengan **Tanstack Form**
+- Validasi form sederhana
 
-- @tanstack/react-query
+✅ **Dashboard**
+- Fetch data user dari endpoint `GET /api/user`
+- Tampilkan data **id, email, role** dalam tabel
+- Implementasi **pagination**
 
-- @tanstack/react-table
+---
 
-- Shadcn UI
+## 📝 Optional Challenge (Jika diimplementasikan)
+- Register Page
+- Layout berbeda untuk halaman Auth (login, register) dan Dashboard
+- Sidebar pada Dashboard
+- CRUD (Create, Read, Update)
+- Dark Mode toggle button
+- Kolom ID tabel dibuat elipsis + tooltip untuk detail
 
-- TilwindCSS
+---
 
-### ⚙️ Setup & Instalasi
-- Install dependencies
-- bun install
-- Tambahkan file .env
-```ini
-BUN_PUBLIC_BASE_URL=https://dragonball-api.com/api
+## ⚡️ Tech Stack
+- [React + Vite](https://vitejs.dev/)
+- [Tanstack Router](https://tanstack.com/router)
+- [Tanstack Form](https://tanstack.com/form)
+- [Tanstack Query](https://tanstack.com/query)
+- [Zustand](https://zustand-demo.pmnd.rs/)
+- [Axios](https://axios-http.com/)
+
+---
+
+## 🚀 Cara Menjalankan Project
+
+### 1. Jalankan Backend
+Clone repository backend:
+```bash
+git clone https://github.com/Salmansha08/nest-auth-jwt-starting backend
+cd backend
+bun install
 ```
+Buat file `.env` di root backend, lalu jalankan:
+```bash
+bun run start:dev
+```
+- Backend berjalan di: `http://localhost:3210`
+- Swagger API Docs: `http://localhost:3210/api/docs`
+<br>
 
+### 2. Jalankan Frontend
 
-### 🔎Jalankan project
+Clone repository ini lalu install dependency:
+``` bash
+bun install
+```
+Jalankan aplikasi React:
+
 ```bash
 bun dev
 ```
+Frontend berjalan di: `http://localhost:3000`
 
-### 📖 Fitur Utama
-1. Routing
+---
 
-- ``/profile`` → Menampilkan nama, foto, dan deskripsi singkat.
+## 📸 Screenshots
+- Light Mode
+![Light Mode](./docs/images/login.png)
+<br>
 
-- ``/characters`` → Menampilkan tabel karakter Dragon Ball.
-
-2. Fetching Data (API Dragon Ball)
-
-- Endpoint:
-```bash
-GET /characters?page=1&limit=10
-```
-- Pagination menggunakan query ``page`` & ``limit``.
-
-3. TanStack Query + Shadcn Pagination
-
-- Data karakter diambil dengan TanStack Query.
-
-- Pagination diimplementasikan dengan komponen Shadcn.
-
-4. TanStack Table + Shadcn
-
-- Tabel menampilkan Name & Image minimal.
-
-### 📸 Screenshot
-- Profile Page
-![ProfilePage](./docs/images/profile.png)
-
-- Characters Page
-![CharacterPage](./docs/images/character.png)
-
-- Search & Filter
-![SearchPage](./docs/images/search.png)
+- Dark Mode
+![Dark Mode](./docs/images/login-dark.png)

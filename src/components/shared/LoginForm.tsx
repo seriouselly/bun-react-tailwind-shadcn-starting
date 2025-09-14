@@ -82,7 +82,7 @@ export const LoginForm: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen w-100 flex items-center justify-center">
+    <div className="min-h-150 w-100 flex items-center justify-center">
       <div className="py-15 h-120 max-w-xl p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
         <h2 className="text-center text-2xl font-bold mb-8">Login Form</h2>
 
