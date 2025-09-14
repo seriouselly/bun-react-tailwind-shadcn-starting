@@ -7,6 +7,6 @@ export const Route = createFileRoute('/registration')({
 
 function Registration() {
     return [
-      <RegistrationForm />
+      <RegistrationForm key="registration-form" />
   ]
 }
